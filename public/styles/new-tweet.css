@@ -15,7 +15,6 @@ border-bottom: 8px solid black;
   justify-content: space-between;   
   color: rgb(0, 0, 0);
   font-family: 'Bungee', sans-serif;
-  border: 2px solid rgb(7, 233, 109);
   }
 
   button{
@@ -23,3 +22,6 @@ border-bottom: 8px solid black;
     color: white;
   }
 
+.minus-counter {
+  color: red;
+}
