@@ -5,3 +5,7 @@ nav {
   color: #ffffff;
   padding: 1.5em;
 }
+
+nav span {
+  font-family: 'Bungee', sans-serif;
+}
