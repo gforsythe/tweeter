@@ -1,6 +1,7 @@
-header {
+header.navigation-header {
   display: flex;
   justify-content: center;
+  margin-top: 98px;
   align-items: center;
   flex-direction: column;
   background-color: #e7e2e2;
@@ -11,4 +12,9 @@ background-image: url("https://www.transparenttextures.com/patterns/transparent-
 }
 nav span {
   font-family: 'Bungee', sans-serif;
+}
+
+h2.user-name {
+  margin-top: 0%;
+  margin-bottom: 0%;
 }

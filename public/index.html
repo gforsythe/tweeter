@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/submitted-tweet.css" type="text/css" />
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <!-- Font Link -here the fonts is linked to the index-->
     <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
@@ -28,16 +31,15 @@
     <nav>
       <span>tweeter</span>
     </nav>
-    <header>
+    <header class="navigation-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <h2 class="user-name">Your Name</h2>
       </div>
   </header>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
@@ -49,6 +51,27 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        <section>
+            <article class="submitted-tweet">
+              <header class="tweet-header">
+                <div class="tweet-user-profile">
+                  <i class="far fa-grin-beam"></i>
+                  <p class="username">Name</p>
+                </div>
+                <span class="user-handle">@username</span>
+              </header>
+                <p class="composed-tweet-message">Tweet sent</p>
+              <footer class="tweet-footer">
+                <p class="date-posted">Date posted</p>
+                <div class="composed-tweeter-icons">
+                  <i class="fas fa-flag"></i>
+                  <i class="fas fa-retweet"></i>
+                  <i class="fas fa-heart"></i>
+                </div>
+              </footer>
+            </article>
+          </section>
+        </section>
       </section>
     </main>
   </body>
