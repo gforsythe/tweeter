@@ -19,7 +19,11 @@ $(() => {
 
   }
 
-
+  const escape = function (str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   const createTweetElement = function (tweet) {
     const username = tweet.user.name;
@@ -35,7 +39,7 @@ $(() => {
       </div>
       <span class="user-handle">${userhandle}</span>
     </header>
-      <p class="composed-tweet-message">${contenttext}</p>
+      <p class="composed-tweet-message">${escape(contenttext)}</p>
     <footer class="tweet-footer">
       <p class="date-posted">${createdat}</p>
       <div class="composed-tweeter-icons">
@@ -53,19 +57,23 @@ $(() => {
 
   //targets the submit button to fireoff whats in the textbox
   $('#post-tweet').submit(function (event) {
-    const minusCounter = $('#tweet-text').val();
+    const counter = $('#tweet-text').val();
     const textBody = ($(this).serialize());
     event.preventDefault();
-    if (minusCounter.length > 140) {
-      alert('You have exceeded the count')
-      return;
-    };
-    if (minusCounter === "" || minusCounter === null) {
-      alert('there is no content');
+    if (counter.length > 140) {
+      $("#too-big-error").slideDown("slow");
+
       return;
     }
+
+    if (!counter) {
+      $("#no-message-error").slideDown("slow");
+      return;
+    }
+    $('.error-message').slideUp();
     $.post('/tweets', textBody)
       .then(loadTweets)
+
     $('#tweet-text').val('');
   })
   //loads tweets from the database /tweets/

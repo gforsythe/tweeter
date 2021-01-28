@@ -48,6 +48,12 @@
     <section class="new-tweet">
       <form id="post-tweet" method="POST" action='/tweets/'>
         <label for="tweet-text">What are you humming about?</label>
+        <div class="error-message" id="no-message-error">Sorry. You need to type something here.
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error-message" id="too-big-error">Sorry. You have exceeded the count.
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="submitTweet">
           <button type="submit">Tweet</button>
