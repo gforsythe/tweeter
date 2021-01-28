@@ -9,7 +9,7 @@ $(() => {
 
 
   const renderTweets = function (tweets) {
-    // loops through tweets
+    $('#tweet-container').empty()
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
@@ -53,10 +53,20 @@ $(() => {
 
   //targets the submit button to fireoff whats in the textbox
   $('#post-tweet').submit(function (event) {
+    const minusCounter = $('#tweet-text').val();
     const textBody = ($(this).serialize());
     event.preventDefault();
-    $.post('/tweets', textBody);
-
+    if (minusCounter.length > 140) {
+      alert('You have exceeded the count')
+      return;
+    };
+    if (minusCounter === "" || minusCounter === null) {
+      alert('there is no content');
+      return;
+    }
+    $.post('/tweets', textBody)
+      .then(loadTweets)
+    $('#tweet-text').val('');
   })
   //loads tweets from the database /tweets/
   const loadTweets = function () {
