@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
@@ -21,50 +23,63 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
     rel="stylesheet" />
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/relativeTime.min.js"> </script>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+
+
+
+
+
+  < !--App JS-->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
+    <div class="right">
+      <p class="write-new-tweet"><b>Write</b> a new tweet</p>
+      <i class="fas fa-angle-double-down"></i>
   </nav>
-  <header class="navigation-header">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2 class="user-name">Your Name</h2>
-    </div>
-  </header>
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <form id="post-tweet" method="POST" action='/tweets/'>
-        <label for="tweet-text">What are you humming about?</label>
-        <div class="error-message" id="no-message-error">Sorry. You need to type something here.
-          <i class="fas fa-exclamation-circle"></i>
-        </div>
-        <div class="error-message" id="too-big-error">Sorry. You have exceeded the count.
-          <i class="fas fa-exclamation-circle"></i>
-        </div>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="submitTweet">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-      <section id="tweet-container">
+  <div class="content-wrapper">
+    <header class="navigation-header">
+      <div class="main-avatar">
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2 class="user-name">Your Name</h2>
+      </div>
+    </header>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <form id="post-tweet" method="POST" action='/tweets/'>
+          <label for="tweet-text">What are you humming about?</label>
+          <div class="error-message" id="no-message-error">Sorry. You need to type something here.
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+          <div class="error-message" id="too-big-error">Sorry. You have exceeded the count.
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="submitTweet">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+        <section id="tweet-container">
+        </section>
       </section>
-    </section>
-    </section>
-  </main>
+      </section>
+    </main>
+  </div>
 </body>
 
 </html>
