@@ -12,3 +12,14 @@ nav {
 nav span {
   font-family: 'Bungee', sans-serif;
 }
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: red;
+}
+
+.write-new-tweet {
+  color: #ffffff;
+}

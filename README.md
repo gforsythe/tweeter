@@ -13,9 +13,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 
 ## Final Product 
-!["Main-feed"]()
-!["Time-stamp"]()
-!["Mobile-view"]()
+!["Main-feed"](https://github.com/gforsythe/tweeter/blob/master/docs/the%20app.png?raw=true)
+!["Time-stamp"](https://github.com/gforsythe/tweeter/blob/master/docs/instant%20timestamp.png?raw=true)
+!["Mobile-view"](https://github.com/gforsythe/tweeter/blob/master/docs/mobile%20version.png?raw=true)
 
 
 ## Dependencies
